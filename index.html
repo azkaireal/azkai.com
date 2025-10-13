@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official site of Azkai. Coming soon.">  <title>Azkai</title>
+  <meta name="description" content="Official site of Azkai. Coming soon.">
+  <title>Azkai</title>
   <style>
     body {
       margin: 0;
@@ -18,13 +19,13 @@
       text-align: center;
     }
     .logo {
-  font-size: 5rem;                 /* bigger size */
-  font-weight: 750;                /* extra bold */
-  margin-bottom: 2rem;
-  color: #E0E0E0;
-  letter-spacing: 0em;           /* spaced letters */
-text-shadow: 4px 4px 8px rgba(0,0,0,1.2);  /* subtle glow/shadow */
-}
+      font-size: 5rem;
+      font-weight: 750;
+      margin-bottom: 2rem;
+      color: #E0E0E0;
+      letter-spacing: 0em;
+      text-shadow: 4px 4px 8px rgba(0,0,0,1.2);
+    }
     .message {
       font-size: 1rem;
       font-weight: 500;
@@ -43,6 +44,37 @@ text-shadow: 4px 4px 8px rgba(0,0,0,1.2);  /* subtle glow/shadow */
     }
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Mobile-specific layout */
+    @media (max-width: 768px) {
+      /* keep desktop sizes intact; reposition into top (first) third */
+      body { justify-content: flex-start; }
+    
+      .logo {
+        position: absolute;
+        top: 33vh;               /* first third (≈0.33 of viewport height) */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        font-size: 4.5rem;
+        /* preserve original font-size (5rem) */
+      }
+    
+      .message {
+        position: absolute;
+        top: calc(33vh + 6rem); /* place message just below logo (adjusted) */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        font-size: 0.9rem;
+        /* preserve original font-size (1rem) */
+      }
+    
+      .footer {
+        bottom: 20px;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
